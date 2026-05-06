@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Focus Macro Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Focus Macro Dashboard</h1>
+      <p>
+        Histórico, insights macroeconômicos e framework de decisão com base no
+        Boletim Focus.
+      </p>
+      <a href="https://www.bcb.gov.br/publicacoes/focus" target="_blank" rel="noreferrer">Fonte oficial do Boletim Focus (BCB)</a>
+    </header>
+
+    <main>
+      <section class="card">
+        <h2>1) Atualização semanal do Boletim Focus</h2>
+        <form id="focus-form">
+          <div class="grid">
+            <label>Data do boletim
+              <input required type="date" id="releaseDate" />
+            </label>
+            <label>URL do PDF
+              <input required type="url" id="pdfUrl" placeholder="https://www.bcb.gov.br/content/focus/focus/R20260424.pdf" />
+            </label>
+            <label>IPCA (%)
+              <input required type="number" step="0.01" id="ipca" />
+            </label>
+            <label>SELIC fim de ano (%)
+              <input required type="number" step="0.01" id="selic" />
+            </label>
+            <label>PIB (%)
+              <input required type="number" step="0.01" id="gdp" />
+            </label>
+            <label>Câmbio (BRL/USD)
+              <input required type="number" step="0.01" id="fx" />
+            </label>
+          </div>
+          <button type="submit">Salvar boletim</button>
+        </form>
+        <p class="hint">Dica: registre os dados toda semana após a publicação para manter histórico recorrente.</p>
+      </section>
+
+      <section class="card">
+        <h2>2) Histórico do Boletim Focus</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Data</th>
+              <th>IPCA</th>
+              <th>SELIC</th>
+              <th>PIB</th>
+              <th>Câmbio</th>
+              <th>PDF</th>
+              <th>Ação</th>
+            </tr>
+          </thead>
+          <tbody id="history-body"></tbody>
+        </table>
+      </section>
+
+      <section class="card" id="macro-read">
+        <h2>3) Leitura macro</h2>
+        <ul id="macro-insights"></ul>
+      </section>
+
+      <section class="card">
+        <h2>4) Motor de Asset Allocation (Endowment)</h2>
+        <div id="allocation-output"></div>
+      </section>
+
+      <section class="card">
+        <h2>5) Tactical Rebalancing</h2>
+        <div id="rebalancing-output"></div>
+      </section>
+
+      <section class="card">
+        <h2>6) Framework de decisão</h2>
+        <ol>
+          <li>Coleta semanal do Focus (segunda-feira, após divulgação oficial).</li>
+          <li>Comparação com o boletim anterior para detectar revisões.</li>
+          <li>Classificação de regime: desinflação / inflação persistente / desaceleração / aceleração.</li>
+          <li>Geração de sinal tático por classe de ativo.</li>
+          <li>Validação de risco (drawdown, liquidez, limites mandatórios).</li>
+          <li>Execução do rebalanceamento e registro da decisão.</li>
+        </ol>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
