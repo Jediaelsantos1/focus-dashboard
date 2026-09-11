@@ -1,0 +1,93 @@
+:root {
+  color-scheme: light;
+  --bg: #f3f6fb;
+  --card: #ffffff;
+  --text: #142033;
+  --muted: #4c5d7a;
+  --accent: #1e4dd8;
+  --border: #d9e2f1;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+header {
+  background: linear-gradient(120deg, #0a2c8f, #1e4dd8);
+  color: white;
+  padding: 2rem;
+}
+
+header a { color: #d6e6ff; }
+
+main {
+  padding: 1rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.7rem;
+}
+
+label {
+  display: grid;
+  gap: 0.3rem;
+  font-size: 0.9rem;
+}
+
+input {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.5rem;
+}
+
+button {
+  margin-top: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  color: white;
+  background: var(--accent);
+  cursor: pointer;
+}
+
+.hint { color: var(--muted); }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border-bottom: 1px solid var(--border);
+  padding: 0.55rem;
+  text-align: left;
+}
+
+.tag {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.8rem;
+}
+
+.up { background: #ffe3e3; color: #8b1f1f; }
+.down { background: #e3ffec; color: #146c2f; }
+.flat { background: #e9efff; color: #1f3e8b; }
